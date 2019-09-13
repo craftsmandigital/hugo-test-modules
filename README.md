@@ -46,7 +46,7 @@ That's because no theme is added to the Hugo site.
 
 ### For now it has only been bureaucracy. The fun part is starting now:
 
-1. Comment out or delete the variable **theme** in **[config.toml](https://github.com/craftsmandigital/craftsmandigital/blob/master/config.toml)** file
+1. Comment out or delete the variable **theme** in **[config.toml](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml)** file
 
    ```toml
    # theme = "hugo-xmin
@@ -55,7 +55,7 @@ That's because no theme is added to the Hugo site.
 
    
 
-1. Add this to your **[config.toml](https://github.com/craftsmandigital/craftsmandigital/blob/master/config.toml)** to specify a theme as Hugo module:
+1. Add this to your **[config.toml](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml)** to specify a theme as Hugo module:
    ```toml
    [module]
      [[module.imports]]
@@ -114,7 +114,7 @@ Your site is up and running with a **Hugo module**, the theme **[hugo-xmin](http
 * testing-hugo-modules/file-1.md
 * testing-hugo-modules/file-2.md
 
-Here is the configuration that you could drop in your **[config.toml](https://github.com/craftsmandigital/craftsmandigital/blob/master/config.toml)**  file. Add it just under the theme stuff, under **[module]** section:
+Here is the configuration that you could drop in your **[config.toml](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml)**  file. Add it just under the theme stuff, under **[module]** section:
 ```toml
 [[module.imports]]
     path = "github.com/craftsmandigital/markdown-content-repo"
@@ -128,7 +128,7 @@ Here is the configuration that you could drop in your **[config.toml](https://gi
 * **source** describe witch folder(from root) in mounted repo you could append to your Hugo site ([this link brings you inside the actual folder](https://github.com/craftsmandigital/markdown-content-repo/tree/master/testing-hugo-modules))
 * **target** describe witch folder(from root) in your Hugo site the mount could appear (**content/new-stuff**)
 
-After updating **[config.toml](https://github.com/craftsmandigital/craftsmandigital/blob/master/config.toml)** there is nothing more to do. It's time to test your site.
+After updating **[config.toml](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml)** there is nothing more to do. It's time to test your site.
 ```bash
 hugo serve
 ```
@@ -139,7 +139,7 @@ Now you can see your two new posts at the bottom of the start page (http://local
 Click on one of the posts. Check out the URL address
 * http://localhost:1313/new-stuff/file-2/
 
-Do you recognize **new-stuff** from your **[config.toml](https://github.com/craftsmandigital/craftsmandigital/blob/master/config.toml)** file. That was your **target** for your mounting point(**content/new-stuff**)
+Do you recognize **new-stuff** from your **[config.toml](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml)** file. That was your **target** for your mounting point(**content/new-stuff**)
 
 ### Upload your site to GitHub with two modules added.
 
