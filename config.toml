@@ -1,7 +1,13 @@
 baseurl = "/"
 languageCode = "en-us"
 title = "A minimal Hugo website"
+
+
+
 ###########################################
+# This part is for theme as Hugo module
+
+
 # theme = "hugo-xmin"      COMMENTED OUT USING MODULES
  
 
@@ -14,7 +20,27 @@ title = "A minimal Hugo website"
 
 # Dont forget to initialize your project as hugo module  
 # hugo mod init github.com/< your username >/< your GitHub repo >
+# example
+# hugo mod init github.com/craftsmandigital/hugo-test-modules
 ###########################################
+
+
+
+
+###########################################
+# This part is for Hugo modules for content
+
+[[module.imports]]
+    path = "github.com/craftsmandigital/markdown-content-repo"
+    disabled = false
+
+    [[module.imports.mounts]]
+    source = "testing-hugo-modules"
+    target = "content/new-stuff"
+
+###########################################
+
+
 googleAnalytics = ""
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
