@@ -1,8 +1,17 @@
-[TOC]
-
 For the first time I have been able to use the **Hugo modules** feature. Thanks to @chreliot and his [post](https://discourse.gohugo.io/t/how-to-add-a-theme-using-modules-for-beginners/20665), I finally figured out how to use it. I'm not smart enough to figure it out out through the documentation that are available so far.
 
 For other **Hugo modules** noobs that are fighting with **Hugo modules**. This is a step by step guide to help you to get up and running with Hugo modules. 
+
+Table of Contents:
+* Part 1. Prepare a Hugo site to test out Hugo modules
+  * Install latest version of go on your computer
+  * Prepare a test site to implement a theme as a Hugo module
+* Part 2. Add a theme as a Hugo module
+  * For now it has only been bureaucracy. The fun part is starting now
+* Part 3. Add content as a Hugo module
+  * Adding content as a module, that is what you really, really, really whant
+  * Upload your site to GitHub with two modules added.
+  * You can use Hugo modules to mount any kind of resources to your Hugo site.
 
 ## Part 1. Prepare a Hugo site to test out Hugo modules
 ### Install latest version of go on your computer
@@ -37,7 +46,7 @@ That's because no theme is added to the Hugo site.
 
 ### For now it has only been bureaucracy. The fun part is starting now:
 
-1. Comment out or delete the variable **theme** in **[config.toml](https://github.com/craftsmandigital/dummy/blob/master/config.toml)** file
+1. Comment out or delete the variable **theme** in **[config.toml](https://github.com/craftsmandigital/craftsmandigital/blob/master/config.toml)** file
 
    ```toml
    # theme = "hugo-xmin
@@ -105,7 +114,7 @@ Your site is up and running with a **Hugo module**, the theme **[hugo-xmin](http
 * testing-hugo-modules/file-1.md
 * testing-hugo-modules/file-2.md
 
-Here is the configuration that you could drop in your **[config.toml](https://github.com/craftsmandigital/dummy/blob/master/config.toml)**  file. Add it just under the theme stuff, under **[module]** section:
+Here is the configuration that you could drop in your **[config.toml](https://github.com/craftsmandigital/craftsmandigital/blob/master/config.toml)**  file. Add it just under the theme stuff, under **[module]** section:
 ```toml
 [[module.imports]]
     path = "github.com/craftsmandigital/markdown-content-repo"
@@ -130,7 +139,7 @@ Now you can see your two new posts at the bottom of the start page (http://local
 Click on one of the posts. Check out the URL address
 * http://localhost:1313/new-stuff/file-2/
 
-Do you recognize **new-stuff** from your **[config.toml](https://github.com/craftsmandigital/dummy/blob/master/config.toml)** file. That was your **target** for your mounting point(**content/new-stuff**)
+Do you recognize **new-stuff** from your **[config.toml](https://github.com/craftsmandigital/craftsmandigital/blob/master/config.toml)** file. That was your **target** for your mounting point(**content/new-stuff**)
 
 ### Upload your site to GitHub with two modules added.
 
