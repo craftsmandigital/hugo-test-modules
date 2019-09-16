@@ -2,6 +2,7 @@ For the first time I have been able to use the **Hugo modules** feature. Thanks 
 
 For other **Hugo modules** noobs that are fighting with **Hugo modules**. This is a step by step guide to help you to get up and running with Hugo modules. 
 
+
 Table of Contents:
 * Part 1. Prepare a Hugo site to test out Hugo modules
   * Install latest version of go on your computer
@@ -13,21 +14,23 @@ Table of Contents:
   * Upload your site to GitHub with two modules added.
   * You can use Hugo modules to mount any kind of resources to your Hugo site.
 
-## Part 1. Prepare a Hugo site to test out Hugo modules
-### Install latest version of go on your computer
 
-Make sure that you have installed a recent version of go on your computer. [Here is the link to the **go** install](https://golang.org/dl/). Follow the instructions carefully. [The **Hugo mod** commands](https://gohugo.io/commands/hugo_mod/) do not work without doing this. If you use the **Hugo mod** commands, without installing **go**, nothing happens. You don't get an error message as feedback.
+
+## Part 1. Prepare a Hugo site to test out Hugo modules
+### Install latest version of **go** on your computer
+
+Make sure that you have installed a recent version of **go** on your computer. [Here is the link to the **go** install](https://golang.org/dl/). Follow the instructions carefully. [The `hugo mod` commands](https://gohugo.io/commands/hugo_mod/) do not work without doing this. If you use the `hugo mod` commands, without installing **go**, nothing happens. You don't get an error message as feedback.
 
 ### Prepare a test site to implement a theme as a Hugo module
 
-The theme **[hugo-xmin](http://github.com/yihui/hugo-xmin)** are used as an example (yes that's exactly the same as @chreliot used in his [post](https://discourse.gohugo.io/t/how-to-add-a-theme-using-modules-for-beginners/20665))
+The theme **[hugo-xmin](http://github.com/yihui/hugo-xmin)** are used as an example (yes that`s exactly the same as @chreliot used in his [post](https://discourse.gohugo.io/t/how-to-add-a-theme-using-modules-for-beginners/20665))
 
 First you have to prepare a Hugo site to test out the **[hugo-xmin](http://github.com/yihui/hugo-xmin)** theme as a **Hugo module**
 
 1. Download the example site for the **hugo-xmin** theme:
 You can [download the zip file here](https://github.com/yihui/hugo-xmin/archive/master.zip)
 2. Extract the folder [exampleSite](https://github.com/yihui/hugo-xmin/tree/master/exampleSite) to your harddrive
-3. Rename exampleSite to **hugo-test-modules**
+3. Rename exampleSite to `hugo-test-modules`
 
 Later on, you will add the **hugo-xmin** theme as a **Hugo module**.
 
@@ -46,16 +49,16 @@ That's because no theme is added to the Hugo site.
 
 ### For now it has only been bureaucracy. The fun part is starting now:
 
-1. Comment out or delete the variable **theme** in **[config.toml](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml)** file
+1. Comment out or delete the variable `theme` in [`config.toml` file](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml)
 
    ```toml
    # theme = "hugo-xmin
    ```
-   We no longer need this variable since we make use of **Hugo modules** (It is possible to use the **theme** variable to mount modules. For simplicity you use the new preferred method).
+   We no longer need this variable since we make use of **Hugo modules** (It is possible to use the `theme` variable to mount modules. For simplicity you use the new preferred method).
 
    
 
-1. Add this to your **[config.toml](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml)** to specify a theme as Hugo module:
+1. Add this to your [`config.toml` file](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml) to specify a theme as Hugo module:
    ```toml
    [module]
      [[module.imports]]
@@ -68,13 +71,13 @@ That's because no theme is added to the Hugo site.
    ```bash
    hugo mod init ugly-dummy
    ```
-   YES IT WAS **ugly-dummy** (It really doesn't mater what the parameter is to the **hugo mod init** command, but there are some restrictions on ".", "/", etc.). I think it's more appropriate to name the module as your Hugo site name. In this case hugo-test-modules. but ugly-dummy is also fine.
+   YES IT WAS `ugly-dummy` (It really doesn't mater what the parameter is to the `hugo mod init` command, but there are some restrictions on ".", "/", etc.). I think it's more appropriate to name the module as your Hugo site name. In this case hugo-test-modules. but ugly-dummy is also fine.
    
    The command could output something like this:
    
    `go: creating new go.mod: module ugly-dummy`
 
-   *information: a new file* **go.mod** *was created*
+   *information: a new file* `go.mod` *was created*
    
 1. Test your site:
    ```bash
@@ -83,11 +86,11 @@ That's because no theme is added to the Hugo site.
    
    Your site should look exactly the same as [this site](https://xmin.yihui.name/)
    
-   *information: a new file* **go.sum** *was created*
+   *information: a new file* `go.sum` *was created*
 
 1. Now its time to upload your finished site to **GitHub**. 
    
-   [Create a **GitHub** Repo](https://github.com/new) and name it **hugo-test-modules**
+   [Create a **GitHub** Repo](https://github.com/new) and name it `hugo-test-modules`
    
    Git commands to upload repo:
 
@@ -98,7 +101,7 @@ That's because no theme is added to the Hugo site.
    git push -u origin master
    ```
    
-1. When you now clone your newly updated repo to your machine, there is no need for **git clone --recursive**. It's just plug and play. Just do a regular **git clone**
+1. When you now clone your newly updated repo to your machine, there is no need for `git clone --recursive`. It's just plug and play. Just do a regular `git clone`
    ```bash
    git clone https://github.com/< your username >/hugo-test-modules.git
    ```
@@ -109,12 +112,12 @@ That was all “happy moduling”
 ## Part 3. Add content as a Hugo module
 ### Adding content as a module, that is what you really, really, really whant
 
-Your site is up and running with a **Hugo module**, the theme **[hugo-xmin](http://github.com/yihui/hugo-xmin)** . Now lets add some markdown files to your content. You can mount folders with markdown files from any git repo(It's also possible to mount folders from your hard drive). The repo you mount, don't has to be a Hugo repo. You are going to mount a folder from this [repo](https://github.com/craftsmandigital/markdown-content-repo). Check it out and be familiar with it. The repo contains a folder **testing-hugo-modules**, that could be mounted. The folder contains two files:
+Your site is up and running with a **Hugo module**, the theme **[hugo-xmin](http://github.com/yihui/hugo-xmin)** . Now lets add some markdown files to your content. You can mount folders with markdown files from any git repo(It's also possible to mount folders from your hard drive). The repo you mount, don't has to be a Hugo repo. You are going to mount a folder from this [repo](https://github.com/craftsmandigital/markdown-content-repo). Check it out and be familiar with it. The repo contains a folder `testing-hugo-modules`, that could be mounted. The folder contains two files:
 
 * testing-hugo-modules/file-1.md
 * testing-hugo-modules/file-2.md
 
-Here is the configuration that you could drop in your **[config.toml](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml)**  file. Add it just under the theme stuff, under **[module]** section:
+Here is the configuration that you could drop in your [`config.toml` file](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml). Add it just under the theme stuff, under `[module]` section:
 ```toml
 [[module.imports]]
     path = "github.com/craftsmandigital/markdown-content-repo"
@@ -124,22 +127,24 @@ Here is the configuration that you could drop in your **[config.toml](https://gi
     source = "testing-hugo-modules"
     target = "content/new-stuff"
 ```
-* **path** describe the repo you mount content from
-* **source** describe witch folder(from root) in mounted repo you could append to your Hugo site ([this link brings you inside the actual folder](https://github.com/craftsmandigital/markdown-content-repo/tree/master/testing-hugo-modules))
-* **target** describe witch folder(from root) in your Hugo site the mount could appear (**content/new-stuff**)
+* `path` describe the repo you mount content from
+* `source` describe witch folder(from root) in mounted repo you could append to your Hugo site ([this link brings you inside the actual folder](https://github.com/craftsmandigital/markdown-content-repo/tree/master/testing-hugo-modules))
+* `target` describe witch folder(from root) in your Hugo site the mount could appear (`content/new-stuff`)
 
-After updating **[config.toml](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml)** there is nothing more to do. It's time to test your site.
+After updating [`config.toml` file](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml) there is nothing more to do. It's time to test your site.
 ```bash
 hugo serve
 ```
 Now you can see your two new posts at the bottom of the start page (http://localhost:1313/)
+
 * 2019/09/12 file 1 for testing Hugo modules for content
 * 2019/09/12 file 2 for testing Hugo modules for content
 
 Click on one of the posts. Check out the URL address
+
 * http://localhost:1313/new-stuff/file-2/
 
-Do you recognize **new-stuff** from your **[config.toml](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml)** file. That was your **target** for your mounting point(**content/new-stuff**)
+Do you recognize `new-stuff` from your [`config.toml` file](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml). That was your `target` for your mounting point(`content/new-stuff`)
 
 ### Upload your site to GitHub with two modules added.
 
@@ -162,6 +167,6 @@ hugo serve
 
 ### You can use Hugo modules to mount any kind of resources to your Hugo site. 
 
-You can mount **layouts** like **partials**, **shortcodes**, resources like JS libraries. Etc. Use your Imagination.
+You can mount `layouts` like `partials` `shortcodes` resources like JS libraries. Etc. Use your Imagination.
 
 That was all, really really really “happy moduling”
